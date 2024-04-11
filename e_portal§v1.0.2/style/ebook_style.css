@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: rgba(19, 27, 32, 0.903);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.e_p{
+    position: absolute;
+    top:1.5em;
+}
+
+
+#menu-toggle{
+    display: none;
+    transition: all 0.5s;
+}
+
+#menu-btn{
+    position: fixed;
+    z-index: 100;
+    top:50px;
+    left: 30px;
+    font-size: 2em;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+@media (max-width:450px) {
+    #menu-btn{
+        top:20px;
+    }
+    .books_e ul li{
+        font-size: 15px;
+    }
+}
+@media (max-width:380px) {
+    .books_e ul li{
+        font-size: 13px;
+    }
+}
+@media (max-width:330px) {
+    .books_e ul li{
+        font-size: 11px;
+    }
+}
+
+.menu ul li{
+    text-decoration: none;
+    list-style-type: none;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    transition: all .5s;
+}
+.menu ul li:hover{
+    box-shadow:0 0 10px #333;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+.menu{
+    position: absolute;
+    left: -100%;
+    top: 0;
+    height: 100%;
+    width: 13.9em;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px black;
+    transition: all 0.5s;
+}
+.menu h1{
+    text-align: center;
+    padding: 10px;
+    color: black;
+    border-bottom: 1px solid #333;
+}
+.menu a{
+    text-decoration: none;
+    color: black;
+}
+.menu ul{    
+    top:3.2em;
+    position: absolute;  
+    left: 0;
+    text-align: center;
+    width: 100%;
+}
+
+#menu-toggle:checked + #menu-btn{
+    left: 7.5em;
+    top:0.1em;
+    box-shadow: 0 0 5px #333;
+    padding: 3px;
+    border-radius: 5rem;
+}
+
+
+#menu-toggle:checked ~ .menu{
+    left: -0.5em;
+}
+
+.books_e{
+    position: absolute;
+    display: block;
+    top:5em;
+    background-color: #b1b1b1;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 3px black;
+}
+.books_e button{
+   background-color: transparent;
+   border: none;
+   font-size: 20px;
+}
+.books_e ul{  
+    display: flex;
+    gap: 25px;
+}
+
+.books_e ul li{
+    text-decoration: none;
+    list-style-type: none;
+    float: left;
+    padding: 0.5em;  
+    transition: all 0.5s;
+}
+.books_e ul li:hover{
+    background-color: white ;
+    border-radius: 1rem;
+    box-shadow: 0 0 5px black;
+    cursor: pointer;
+}
+
+.books_e li::before{
+    content: '';
+    position: absolute;
+    border-radius: 5px;
+    bottom: 0;
+    left: 0;
+    transform: scale(0);
+    background-color: #81e6ff;
+    width: 100%;
+    height: 2px;
+    transition: all 1s;
+}
+.books_e li:hover::before{
+      transform: scale(1);
+}
+
