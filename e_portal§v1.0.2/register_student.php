@@ -53,6 +53,7 @@
     $password = "";
     
     $con = new mysqli($server, $user, $password, $database);
+    
     $con->query('create table if not exists login_student(rollnumber varchar(10) primary key,email text,password text)');
     $con->query('create table if not exists login_staff(employid varchar(30) primary key,email text,password text)');
 
